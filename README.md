@@ -1,7 +1,6 @@
 # KotlinBR
-# ktor-cccat18
 
-Roteiro Curso KotlinBR
+## ktor-cccat18 - Roteiro Curso KotlinBR
 
 Este repositório contém um guia passo a passo para configurar e executar um projeto Kotlin com Ktor, incluindo a configuração de um banco de dados PostgreSQL usando Docker.
 
@@ -21,14 +20,14 @@ Branch main será atualizada conforme o andamento do curso.
 
 ---
 
-## Índice
+## 🗂️ Índice
 1. [Pré-requisitos](#pré-requisitos)
 2. [Criar e rodar o projeto inicial](#criar-e-rodar-o-projeto-inicial)
 3. [Configurar o banco de dados](#configurar-o-banco-de-dados)
 
 ---
 
-## Pré-requisitos
+## 📋 Pré-requisitos
 
 Certifique-se de ter as seguintes ferramentas instaladas no seu ambiente:
 
@@ -61,7 +60,7 @@ Certifique-se de ter as seguintes ferramentas instaladas no seu ambiente:
 
 ---
 
-## Criar e rodar o projeto inicial
+## 😎 Criar e rodar o projeto inicial
 
 ### 🥳 Passo 1: Criar o projeto e baixar o código
 1. Acesse o site oficial do [Ktor](https://ktor.io/).
@@ -80,7 +79,7 @@ Certifique-se de ter as seguintes ferramentas instaladas no seu ambiente:
 
 4. Clique no botão de Download, extraia o projeto nas pasta de sua preferência e abra-o no IntelliJ IDEA.
 
-### 🗂️ Passo 2: Estrutura de pastas do projeto
+### 📁 Passo 2: Estrutura de pastas do projeto
 Após abrir o projeto, a estrutura de arquivos e pastas será a seguinte:
 
 ```
@@ -134,9 +133,9 @@ curl http://localhost:8080
 
 ---
 
-## Configurar o banco de dados
+## 🏦 Configurar o banco de dados
 
-### Passo 1: Criar o arquivo `schema.sql`
+### 📐 Passo 1: Criar o arquivo `schema.sql`
 Crie um arquivo chamado `schema.sql` na raiz do projeto com o seguinte conteúdo:
 
 ```sqldelight
@@ -156,7 +155,7 @@ CREATE TABLE ccca.account (
 );
 ```
 
-### Passo 2: Criar o arquivo `docker-compose.yaml`
+### ⚙️ Passo 2: Criar o arquivo `docker-compose.yaml`
 Crie um arquivo chamado `docker-compose.yaml` na raiz do projeto com o seguinte conteúdo:
 
 ```yaml
@@ -173,7 +172,7 @@ services:
       - ./schema.sql:/docker-entrypoint-initdb.d/init.sql
 ```
 
-### Passo 3: Rodar o container
+### 🏃🏻️ Passo 3: Rodar o container
 1. No terminal, execute o comando:
    ```bash
    docker-compose up -d
@@ -191,7 +190,7 @@ CONTAINER ID   IMAGE         COMMAND                  CREATED              STATU
 ba95a74a2be1   postgres:17   "docker-entrypoint.s…"   About a minute ago   Up 16 seconds   0.0.0.0:5432->5432/tcp   ktor-cccat18-postgres-1
 ```
 
-### Passo 4: Acessar o banco de dados
+### 🗄️ Passo 4: Acessar o banco de dados
 1. Abra sua IDE de banco de dados (ex.: DBeaver ou pgAdmin).
 2. Crie uma nova conexão com as seguintes configurações:
    - Host: `localhost`
@@ -209,7 +208,7 @@ SELECT * FROM ccca.account;
 ```
 
 
-## Checklist rápido
+## ✅ Checklist rápido
 
 - [ ] Java 17 instalado
 - [ ] Docker rodando
@@ -219,8 +218,8 @@ SELECT * FROM ccca.account;
 - [ ] Tabela `account` visível na IDE de banco
 
 
-### Contribuição
+### 🤝 Contribuição
 Contribuições são bem-vindas! Se você encontrar algum erro ou tiver sugestões de melhorias, sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
-### Licença
+### 📄 Licença
 Este projeto está licenciado sob a [MIT License](LICENSE).
