@@ -14,6 +14,11 @@ Cada aula terá uma branch específica, exemplo aula 1 branch ktor-cccat18-1, e 
 
 Branch main será atualizada conforme o andamento do curso.
 
+### O que é Kotlin e Ktor?
+
+[Kotlin](https://kotlinlang.org/) é uma linguagem de programação moderna, concisa e segura, muito usada no desenvolvimento Android e backend.  
+[Ktor](https://ktor.io/) é um framework para construir aplicações web e APIs em Kotlin de forma simples e rápida.
+
 ---
 
 ## Índice
@@ -28,15 +33,37 @@ Branch main será atualizada conforme o andamento do curso.
 Certifique-se de ter as seguintes ferramentas instaladas no seu ambiente:
 
 1. [IntelliJ IDEA Community Edition](https://www.jetbrains.com/pt-br/idea/download#community-edition)
-2. [Java 17](https://youtu.be/oyYtHrihThk?si=t6wfWPFff7F7JLCR)
+
+
+2. Java 17
+
+    #### Instalar Java 17 (via SDKMAN - recomendado)
+    
+    Para instalar o Java 17 no Linux ou Mac usando o SDKMAN, siga os passos abaixo:
+    ```bash
+    curl -s "https://get.sdkman.io" | bash
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
+    sdk install java 17.0.7-tem
+    ```
+    Para instalar o Java 17 no Windows, veja o vídeo abaixo:
+    
+    https://www.youtube.com/watch?v=oyYtHrihThk&ab_channel=JagodeVreede
+
+
 3. [Docker](https://www.docker.com/)
+
+    - [Instalação do Docker no Linux](https://docs.docker.com/engine/install/)
+    - [Instalação do Docker no Mac](https://docs.docker.com/desktop/install/mac-install/)
+    - [Instalação do Docker no Windows](https://docs.docker.com/desktop/install/windows-install/)
+
+
 4. Uma IDE para PostgreSQL (ex.: [DBeaver](https://dbeaver.io/) ou [pgAdmin](https://www.pgadmin.org/))
 
 ---
 
 ## Criar e rodar o projeto inicial
 
-### Passo 1: Criar o projeto e baixar o código
+### 🥳 Passo 1: Criar o projeto e baixar o código
 1. Acesse o site oficial do [Ktor](https://ktor.io/).
 2. Clique no botão Start para configurar o novo projeto
 3. Configure o projeto:
@@ -53,7 +80,7 @@ Certifique-se de ter as seguintes ferramentas instaladas no seu ambiente:
 
 4. Clique no botão de Download, extraia o projeto nas pasta de sua preferência e abra-o no IntelliJ IDEA.
 
-### Passo 2: Estrutura do projeto
+### 🗂️ Passo 2: Estrutura de pastas do projeto
 Após abrir o projeto, a estrutura de arquivos e pastas será a seguinte:
 
 ```
@@ -83,18 +110,27 @@ Após abrir o projeto, a estrutura de arquivos e pastas será a seguinte:
  
 ```
 
-### Passo 3: Rodar o projeto
+### ▶️ Passo 3: Rodar o projeto
 1. No IntelliJ IDEA, localize a classe `Application.kt`.
-2. Execute o método `main` para iniciar o servidor. No terminal, você verá uma saída semelhante a esta:
 
-```
-2025-04-11 04:55:42.187 [main] INFO  Application - Autoreload is disabled because the development mode is off.
-2025-04-11 04:55:42.269 [main] INFO  Application - Using embedded H2 database for testing; replace this flag to use postgres
-2025-04-11 04:55:42.363 [main] INFO  Application - Application started in 0.283 seconds.
-2025-04-11 04:55:42.452 [DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
-```
+2. Execute o método `main` para iniciar o servidor. 
 
-3. Verifique se o servidor está funcionando acessando `http://localhost:8080` no navegador.
+    No terminal, você verá uma saída semelhante a esta:
+    
+    ```
+    2025-04-11 04:55:42.187 [main] INFO  Application - Autoreload is disabled because the development mode is off.
+    2025-04-11 04:55:42.269 [main] INFO  Application - Using embedded H2 database for testing; replace this flag to use postgres
+    2025-04-11 04:55:42.363 [main] INFO  Application - Application started in 0.283 seconds.
+    2025-04-11 04:55:42.452 [DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+    ```
+
+### 🧪 Passo 4. Testar a API
+
+Você pode testar se o servidor está funcionando corretamente com o seguinte comando:
+
+```bash
+curl http://localhost:8080
+```
 
 ---
 
@@ -172,9 +208,19 @@ ba95a74a2be1   postgres:17   "docker-entrypoint.s…"   About a minute ago   Up 
 SELECT * FROM ccca.account;
 ```
 
+
+## Checklist rápido
+
+- [ ] Java 17 instalado
+- [ ] Docker rodando
+- [ ] Projeto aberto no IntelliJ
+- [ ] Servidor responde em `http://localhost:8080`
+- [ ] Banco de dados PostgreSQL rodando
+- [ ] Tabela `account` visível na IDE de banco
+
+
 ### Contribuição
 Contribuições são bem-vindas! Se você encontrar algum erro ou tiver sugestões de melhorias, sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
 ### Licença
 Este projeto está licenciado sob a [MIT License](LICENSE).
-```
